@@ -1,18 +1,94 @@
-<div class="nav-setting">
-  <div class="ui buttons">
-    <div class="ui floating dropdown button">
-      <i class="icon bars"></i>
-      <div class="menu">
-        <% if (user) { %>
-          <a class="item" href="/posts?author=<%= user._id %>">个人主页</a>
-          <div class="divider"></div>
-          <a class="item" href="/posts/create">发表文章</a>
-          <a class="item" href="/signout">登出</a>
-        <% } else { %>
-          <a class="item" href="/signin">登录</a>
-          <a class="item" href="/signup">注册</a>
-        <% } %>
+ <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#mdeData" data-toggle="tab">MDE Data <span class="sr-only">(current)</span></a></li>
+            <li><a href="#reports" data-toggle="tab">Reports</a></li>
+            <li><a href="#admin" data-toggle='tab'>Admin</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+        <div class="tab-content">
+         <div class="tab-pane active" id="mdeData">
+          <h2 class="sub-header">MDE Data</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>id</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+		  <div class="tab-pane" id="reports">
+          <h2 class="sub-header">Reports</h2>
+          </div>
+		  
+		   <div class="tab-pane" id="admin">
+          <h2 class="sub-header">Admin</h2>
+          </div>
+          </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
