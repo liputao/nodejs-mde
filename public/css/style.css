@@ -103,3 +103,9 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+
+.panel-default > .panel-heading {
+  background: #428bca; color: #fff;
+}

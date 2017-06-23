@@ -2,15 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 var PostModel = require('../models/posts');
-var CommentModel = require('../models/comments');
-var checkLogin = require('../middlewares/check').checkLogin;
+//var CommentModel = require('../models/comments');
+//var checkLogin = require('../middlewares/check').checkLogin;
 
 // GET /posts 所有用户或者特定用户的文章页
 //   eg: GET /posts?author=xxx
 router.get('/', function(req, res, next) {
-  var author = req.query.author;
-
-  PostModel.getPosts(author)
+  PostModel.getPosts()
     .then(function (posts) {
       res.render('posts', {
         posts: posts
@@ -20,12 +18,12 @@ router.get('/', function(req, res, next) {
 });
 
 // GET /posts/create 发表文章页
-router.get('/create', checkLogin, function(req, res, next) {
+router.get('/create', function(req, res, next) {
   res.render('create');
 });
 
 // POST /posts 发表一篇文章
-router.post('/', checkLogin, function(req, res, next) {
+router.post('/', function(req, res, next) {
   var author = req.session.user._id;
   var title = req.fields.title;
   var content = req.fields.content;
@@ -86,7 +84,7 @@ router.get('/:postId', function(req, res, next) {
 });
 
 // GET /posts/:postId/edit 更新文章页
-router.get('/:postId/edit', checkLogin, function(req, res, next) {
+router.get('/:postId/edit', function(req, res, next) {
   var postId = req.params.postId;
   var author = req.session.user._id;
 
@@ -106,7 +104,7 @@ router.get('/:postId/edit', checkLogin, function(req, res, next) {
 });
 
 // POST /posts/:postId/edit 更新一篇文章
-router.post('/:postId/edit', checkLogin, function(req, res, next) {
+router.post('/:postId/edit', function(req, res, next) {
   var postId = req.params.postId;
   var author = req.session.user._id;
   var title = req.fields.title;
@@ -122,7 +120,7 @@ router.post('/:postId/edit', checkLogin, function(req, res, next) {
 });
 
 // GET /posts/:postId/remove 删除一篇文章
-router.get('/:postId/remove', checkLogin, function(req, res, next) {
+router.get('/:postId/remove', function(req, res, next) {
   var postId = req.params.postId;
   var author = req.session.user._id;
 
@@ -136,7 +134,7 @@ router.get('/:postId/remove', checkLogin, function(req, res, next) {
 });
 
 // POST /posts/:postId/comment 创建一条留言
-router.post('/:postId/comment', checkLogin, function(req, res, next) {
+router.post('/:postId/comment', function(req, res, next) {
   var author = req.session.user._id;
   var postId = req.params.postId;
   var content = req.fields.content;
@@ -156,7 +154,7 @@ router.post('/:postId/comment', checkLogin, function(req, res, next) {
 });
 
 // GET /posts/:postId/comment/:commentId/remove 删除一条留言
-router.get('/:postId/comment/:commentId/remove', checkLogin, function(req, res, next) {
+router.get('/:postId/comment/:commentId/remove', function(req, res, next) {
   var commentId = req.params.commentId;
   var author = req.session.user._id;
 

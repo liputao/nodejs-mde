@@ -1,43 +1,7 @@
 var marked = require('marked');
 var Post = require('../lib/mongo').Post;
-var CommentModel = require('./comments');
 
-// 给 post 添加留言数 commentsCount
-Post.plugin('addCommentsCount', {
-  afterFind: function (posts) {
-    return Promise.all(posts.map(function (post) {
-      return CommentModel.getCommentsCount(post._id).then(function (commentsCount) {
-        post.commentsCount = commentsCount;
-        return post;
-      });
-    }));
-  },
-  afterFindOne: function (post) {
-    if (post) {
-      return CommentModel.getCommentsCount(post._id).then(function (count) {
-        post.commentsCount = count;
-        return post;
-      });
-    }
-    return post;
-  }
-});
 
-// 将 post 的 content 从 markdown 转换成 html
-Post.plugin('contentToHtml', {
-  afterFind: function (posts) {
-    return posts.map(function (post) {
-      post.content = marked(post.content);
-      return post;
-    });
-  },
-  afterFindOne: function (post) {
-    if (post) {
-      post.content = marked(post.content);
-    }
-    return post;
-  }
-});
 
 module.exports = {
   // 创建一篇文章
@@ -57,18 +21,11 @@ module.exports = {
   },
 
   // 按创建时间降序获取所有用户文章或者某个特定用户的所有文章
-  getPosts: function getPosts(author) {
+  getPosts: function getPosts() {
     var query = {};
-    if (author) {
-      query.author = author;
-    }
     return Post
       .find(query)
-      .populate({ path: 'author', model: 'User' })
       .sort({ _id: -1 })
-      .addCreatedAt()
-      .addCommentsCount()
-      .contentToHtml()
       .exec();
   },
 

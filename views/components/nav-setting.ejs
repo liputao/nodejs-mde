@@ -1,146 +1,125 @@
- <div class="container-fluid">
-      <div class="row">
+<div class="container-fluid">
+    <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#mdeData" data-toggle="tab">MDE Data <span class="sr-only">(current)</span></a></li>
-            <li><a href="#reports" data-toggle="tab">Reports</a></li>
-            <li><a href="#admin" data-toggle='tab'>Admin</a></li>
-          </ul>
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#mdeData" data-toggle="tab">MDE Data <span class="sr-only">(current)</span></a>
+                </li>
+                <li><a href="#reports" data-toggle="tab">Reports</a></li>
+                <li><a href="#admin" data-toggle='tab'>Admin</a></li>
+            </ul>
         </div>
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-       <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">MDE Data &nbsp
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">View all the MDE Data</a></li>
-      <li><a href="#myModal" data-toggle="modal" data-target="#myModal">New MDE Data</a></li>
-      <li><a href="#">Upload MDE Data</a></li>
-       <li><a href="#">Batch Upload MDE Data</a></li>
-        <li><a href="#">Export MDE Data</a></li>
-         <li><a href="#">Download MDE Data</a></li>
-          <li><a href="#">Delete MDE Data</a></li>
-    </ul>
-</div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-  <form class="form-horizontal" action="/action_page.php">
-  <fieldset>
-<legend>New MDE Data</legend>
-    <div class="form-group">
-      <label class="control-label col-sm-3" for="wsmdNumber">WSMD number:</label>
-      <div class="col-sm-9">
-        <input type="input" class="form-control" id="wsmdNumber" placeholder="Enter WSMD number" name="wsmdNumber">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-3" for="release">Release:</label>
-      <div class="col-sm-9">          
-        <input type="text" class="form-control" id="release" placeholder="Enter Release" name="release">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-3" for="opratorName">Oprator name:</label>
-      <div class="col-sm-9">          
-        <input type="text" class="form-control" id="opratorName" placeholder="Enter Oprator name" name="opratorName">
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-3" for="addedInfo">Info added:</label>
-      <div class="col-sm-9">          
-        <input type="text" class="form-control" id="addedInfo" placeholder="Enter Info added" name="addedInfo">
-      </div>
-    </div>
-    
-      <div class="form-group">
-      <label class="control-label col-sm-3" for="link">Link:</label>
-      <div class="col-sm-9">          
-        <input type="text" class="form-control" id="link" placeholder="Enter Link" name="link">
-      </div>
+            <div class="dropdown">
+                <span class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">MDE Data &nbsp</span>
+                <ul class="dropdown-menu">
+                    <li><a href="#">View all the MDE Data</a></li>
+                    <li><a href="#myModal" data-toggle="modal" data-target="#myModal">New MDE Data</a></li>
+                    <li><a href="#">Upload MDE Data</a></li>
+                    <li><a href="#">Batch Upload MDE Data</a></li>
+                    <li><a href="#">Export MDE Data</a></li>
+                    <li><a href="#">Download MDE Data</a></li>
+                    <li><a href="#">Delete MDE Data</a></li>
+                </ul>
+            </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="panel panel-default" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Create</div>
+                    </div>
+                    <!-- Modal content-->
+                    <div style="padding-top:30px" class="panel-body" >
+                        <form class="form-horizontal" method="post" action="/postsMde">
+                            <fieldset>
 
-      <div class="form-group">
-      <label class="control-label col-sm-3" for="link1">Link:</label>
-      <div class="col-sm-9">          
-        <input type="text" class="form-control" id="link1" placeholder="Enter Link" name="link">
-      </div>
-    </fieldset>
-  </form>
-      </div>
-      
-    </div>
-  </div>
-        <div class="tab-content">
-         <div class="tab-pane active" id="mdeData">
-          <h2 class="sub-header">MDE Data</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>id</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-		  <div class="tab-pane" id="reports">
-          <h2 class="sub-header">Reports</h2>
-          </div>
-		  
-		   <div class="tab-pane" id="admin">
-          <h2 class="sub-header">Admin</h2>
-          </div>
-          </div>
-          </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="wsmdNumber">WSMD number:</label>
+                                    <div class="col-sm-9">
+                                        <input type="input" class="form-control" id="wsmdNumber"
+                                               placeholder="Enter WSMD number" name="wsmdNumber">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="release">Release:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="release" placeholder="Enter Release"
+                                               name="release">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="opratorName">Oprator name:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="opratorName"
+                                               placeholder="Enter Oprator name" name="opratorName">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="addedInfo">Info added:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="addedInfo"
+                                               placeholder="Enter Info added" name="addedInfo">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-3" for="link">Link:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="link" placeholder="Enter Link"
+                                               name="link">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                            <button type="button" class="btn btn-default">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane active" id="mdeData">
+                    <h2 class="sub-header">MDE Data</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>WSMD Number</th>
+                                <th>Release</th>
+                                <th>Oprator name</th>
+                                <th>Info added</th>
+                                <th>Link</th>
+                            </tr>
+                            </thead>
+                            <% for (var i = 1; i < posts.length; i++) { %>
+                            <tr>
+                                <td><%= posts[i].wsmdNumber %></td>
+                                <td><%= posts[i].release %></td>
+                                <td><%= posts[i].opratorName %></td>
+                                <td><%= posts[i].addedInfo %></td>
+                                <td><%= posts[i].link %></td>
+                            </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="reports">
+                    <h2 class="sub-header">Reports</h2>
+                </div>
+
+                <div class="tab-pane" id="admin">
+                    <h2 class="sub-header">Admin</h2>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+</div>
