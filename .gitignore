@@ -3,3 +3,5 @@ config/*
 npm-debug.log
 node_modules
 coverage
+*.xml
+*.iml
